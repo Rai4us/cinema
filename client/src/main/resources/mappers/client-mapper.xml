@@ -3,7 +3,7 @@
 
 <mapper namespace="Client">
 
-    <select id="getAllUsers" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+    <select id="getAllUsers" resultType="java.util.HashMap">
         SELECT
         USERID,
         USERNAME

@@ -1,0 +1,167 @@
+databaseChangeLog:
+  - changeSet:
+      id: createTable_client
+      author: Yevhenii Shevchenko
+      changes:
+        - createTable:
+            tableName: client
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                    autoIncrement: true
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: surname
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: email
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: password
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: birthDay
+                  type: DATE
+                  constraints:
+                    nullable: false
+
+  - changeSet:
+      id: insertTestUsers
+      author: Yevhenii Shevchenko
+      changes:
+        - insert:
+            tableName: client
+            columns:
+              - column:
+                  name: id
+                  value: 1
+              - column:
+                  name: name
+                  value: John
+              - column:
+                  name: surname
+                  value: Doe
+              - column:
+                  name: email
+                  value: john.doe@example.com
+              - column:
+                  name: password
+                  value: password1
+              - column:
+                  name: birthDay
+                  value: 1985-07-15
+
+        - insert:
+            tableName: client
+            columns:
+              - column:
+                  name: id
+                  value: 2
+              - column:
+                  name: name
+                  value: Jane
+              - column:
+                  name: surname
+                  value: Smith
+              - column:
+                  name: email
+                  value: jane.smith@example.com
+              - column:
+                  name: password
+                  value: password2
+              - column:
+                  name: birthDay
+                  value: 1990-03-20
+
+        - insert:
+            tableName: client
+            columns:
+              - column:
+                  name: id
+                  value: 3
+              - column:
+                  name: name
+                  value: Michael
+              - column:
+                  name: surname
+                  value: Johnson
+              - column:
+                  name: email
+                  value: michael.johnson@example.com
+              - column:
+                  name: password
+                  value: password3
+              - column:
+                  name: birthDay
+                  value: 1988-11-02
+
+        - insert:
+            tableName: client
+            columns:
+              - column:
+                  name: id
+                  value: 4
+              - column:
+                  name: name
+                  value: Emily
+              - column:
+                  name: surname
+                  value: Anderson
+              - column:
+                  name: email
+                  value: emily.anderson@example.com
+              - column:
+                  name: password
+                  value: password4
+              - column:
+                  name: birthDay
+                  value: 1995-06-25
+
+        - insert:
+            tableName: client
+            columns:
+              - column:
+                  name: id
+                  value: 5
+              - column:
+                  name: name
+                  value: Daniel
+              - column:
+                  name: surname
+                  value: Wilson
+              - column:
+                  name: email
+                  value: daniel.wilson@example.com
+              - column:
+                  name: password
+                  value: password5
+              - column:
+                  name: birthDay
+                  value: 1992-09-10
+  -  changeSet:
+       id: addAutoIncrement-example
+       author: Yevhenii Shevchenko
+       changes:
+         -   addAutoIncrement:
+              columnDataType: int
+              tableName: client
+              columnName: id
+              defaultOnNull: false
+              generationType: ALWAYS
+              incrementBy: 1
+              schemaName: public
+              startWith: 6

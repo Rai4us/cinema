@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - changeSet:
+      id: renameColumn_client
+      author: Yevhenii Shevchenko
+      changes:
+        - renameColumn:
+            tableName: client
+            oldColumnName: birthDay
+            newColumnName: birth_day
+            remarks: Renaming column birthDay to birth_day
